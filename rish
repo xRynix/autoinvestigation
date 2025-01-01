@@ -1,0 +1,17 @@
+local placeId = game.PlaceId
+
+if placeId == 78904562518018 then
+    task.wait(3)
+    
+    local investigationType = _G.Investigation or "Cursed School"
+    local difficulty = _G.difficulty or "Easy"
+    
+    
+    local args = {
+        [1] = "Investigation",
+        [2] = investigationType,
+        [3] = difficulty
+    }
+    
+    game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("Server"):WaitForChild("Raids"):WaitForChild("QuickStart"):InvokeServer(unpack(args))
+end
